@@ -1,7 +1,7 @@
 # YouTube skills for AI agents
 
 Agent skills for YouTube transcripts, search, channels and playlists, powered
-by [YTAPI](https://ytapi.dev). They work with Claude Code, Codex, Cursor,
+by [YTAPI](https://ytapi.dev/?utm_source=skill). They work with Claude Code, Codex, Cursor,
 OpenClaw, Hermes Agent and any agent that reads [Agent Skills](https://agentskills.io).
 
 Plain HTTPS calls with `curl`, nothing else to install. They also work where

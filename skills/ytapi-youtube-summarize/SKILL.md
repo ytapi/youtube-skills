@@ -28,7 +28,7 @@ metadata:
 
 # Summarize YouTube videos
 
-Turn a YouTube video, or a channel's new uploads, into notes, using transcripts from [YTAPI](https://ytapi.dev).
+Turn a YouTube video, or a channel's new uploads, into notes, using transcripts from [YTAPI](https://ytapi.dev/?utm_source=skill).
 
 ## Setup
 

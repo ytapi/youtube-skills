@@ -28,7 +28,7 @@ metadata:
 
 # YouTube search
 
-Search YouTube from the agent with [YTAPI](https://ytapi.dev), then pull transcripts of what you find.
+Search YouTube from the agent with [YTAPI](https://ytapi.dev/?utm_source=skill), then pull transcripts of what you find.
 
 ## Setup
 

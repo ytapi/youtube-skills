@@ -29,7 +29,7 @@ metadata:
 # YTAPI: YouTube data for agents
 
 Transcripts, video details, search, channels and playlists from
-[YTAPI](https://ytapi.dev). Plain HTTPS with `curl`; nothing to install.
+[YTAPI](https://ytapi.dev/?utm_source=skill). Plain HTTPS with `curl`; nothing to install.
 
 ## Setup
 

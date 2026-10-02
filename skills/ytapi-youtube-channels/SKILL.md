@@ -28,7 +28,7 @@ metadata:
 
 # YouTube channels and playlists
 
-Channels and playlists from [YTAPI](https://ytapi.dev): profiles, uploads and playlist contents.
+Channels and playlists from [YTAPI](https://ytapi.dev/?utm_source=skill): profiles, uploads and playlist contents.
 
 ## Setup
 

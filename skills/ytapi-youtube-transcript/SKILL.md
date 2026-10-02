@@ -28,7 +28,7 @@ metadata:
 
 # YouTube transcripts
 
-Transcripts and subtitles for any YouTube video with captions, from [YTAPI](https://ytapi.dev).
+Transcripts and subtitles for any YouTube video with captions, from [YTAPI](https://ytapi.dev/?utm_source=skill).
 
 ## Setup
 
