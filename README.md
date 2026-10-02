@@ -1,7 +1,7 @@
 # YouTube skills for AI agents
 
 Agent skills for YouTube transcripts, search, channels and playlists, powered
-by [YTAPI](https://ytapi.dev). They work with Claude Code, Codex, Cursor,
+by [YTAPI](https://ytapi.dev/?utm_source=skill). They work with Claude Code, Codex, Cursor,
 OpenClaw, Hermes Agent and any agent that reads [Agent Skills](https://agentskills.io).
 
 Plain HTTPS calls with `curl`, nothing else to install. They also work where
@@ -56,13 +56,13 @@ Install `ytapi` if you are unsure.
 The skills read the key from `YTAPI_API_KEY`. If it is not set, the agent
 offers to create a free account for you: you give it your email address and
 the 6-digit code we send you, and it stores the key. No browser and no card.
-Or create a key yourself at [ytapi.dev](https://ytapi.dev/app/api-keys).
+Or create a key yourself at [ytapi.dev](https://ytapi.dev/app/api-keys?utm_source=skill).
 
 New accounts get 200 free credits. One successful request uses one credit
 (video basic info and search suggestions are free); failed requests are free.
 Until you buy a credit pack, a key can make 1 request per second and 100 per
 day. Packs start at $9 for 2,000 credits and never expire:
-[pricing](https://ytapi.dev/#pricing).
+[pricing](https://ytapi.dev/?utm_source=skill#pricing).
 
 ## Examples
 

@@ -1,13 +1,13 @@
 ---
 name: ytapi-youtube-transcript
 description: "Get the transcript, subtitles or captions of a YouTube video (plain text, Markdown, timestamped JSON, SRT or VTT, any language) through the YTAPI API. Use when the user shares a YouTube link or video ID and wants what was said: to read, summarize, quote, translate or search it. Also use when yt-dlp or youtube-transcript-api fails with HTTP 429, a bot check or an IP block, common on servers and cloud agents. 中文：YouTube 字幕、视频文字稿。"
-version: 1.0.0
+version: 1.0.1
 homepage: https://ytapi.dev
 license: MIT-0
 required_environment_variables:
   - name: YTAPI_API_KEY
     prompt: "YTAPI API key (starts with sk_)"
-    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys"
+    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys?utm_source=skill"
     required_for: "All YTAPI requests"
 metadata:
   openclaw:
@@ -28,7 +28,7 @@ metadata:
 
 # YouTube transcripts
 
-Transcripts and subtitles for any YouTube video with captions, from [YTAPI](https://ytapi.dev).
+Transcripts and subtitles for any YouTube video with captions, from [YTAPI](https://ytapi.dev/?utm_source=skill).
 
 ## Setup
 
@@ -67,7 +67,7 @@ free credits. Until a credit pack is bought, a key can make 1 request per
 second and 100 per day (UTC); `429 daily_limit_exceeded` means that day's
 limit is used up (it resets at 00:00 UTC; any pack removes it).
 `402 insufficient_credits` means the balance is empty: packs from $9 at
-https://ytapi.dev/#pricing. `401` means the key is missing or wrong.
+https://ytapi.dev/?utm_source=skill#pricing. `401` means the key is missing or wrong.
 
 For video details, search, channels, playlists and batches in one skill,
 install `ytapi`. Full reference: https://docs.ytapi.dev
