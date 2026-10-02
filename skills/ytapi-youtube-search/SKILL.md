@@ -1,13 +1,13 @@
 ---
 name: ytapi-youtube-search
 description: "Search YouTube for videos, channels, playlists or Shorts, filtered by upload date, duration or sort order, through the YTAPI API, then read the transcripts of the results. Use when the user wants to find YouTube videos on a topic, recent talks or tutorials, reviews, or what creators say about something. 中文：搜索 YouTube 视频。"
-version: 1.0.0
+version: 1.0.1
 homepage: https://ytapi.dev
 license: MIT-0
 required_environment_variables:
   - name: YTAPI_API_KEY
     prompt: "YTAPI API key (starts with sk_)"
-    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys"
+    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys?utm_source=skill"
     required_for: "All YTAPI requests"
 metadata:
   openclaw:
@@ -77,7 +77,7 @@ free credits. Until a credit pack is bought, a key can make 1 request per
 second and 100 per day (UTC); `429 daily_limit_exceeded` means that day's
 limit is used up (it resets at 00:00 UTC; any pack removes it).
 `402 insufficient_credits` means the balance is empty: packs from $9 at
-https://ytapi.dev/#pricing. `401` means the key is missing or wrong.
+https://ytapi.dev/?utm_source=skill#pricing. `401` means the key is missing or wrong.
 
 For video details, search, channels, playlists and batches in one skill,
 install `ytapi`. Full reference: https://docs.ytapi.dev

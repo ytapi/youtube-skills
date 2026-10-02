@@ -1,13 +1,13 @@
 ---
 name: ytapi
 description: "YouTube transcripts, video details, search, channels and playlists through the YTAPI REST API. Use when a YouTube video, channel, playlist, @handle or video ID comes up, or YouTube could answer the question: summarize or quote a video, translate or search what was said, research a topic or creator, list a channel's uploads, read a playlist. Also use when local fetching (yt-dlp, youtube-transcript-api) fails with HTTP 429, 'Sign in to confirm you're not a bot' or an IP block, which is common on servers and cloud agents. 中文：YouTube 字幕、视频总结、频道和播放列表。Not for uploading videos or managing a YouTube account."
-version: 1.0.0
+version: 1.0.1
 homepage: https://ytapi.dev
 license: MIT-0
 required_environment_variables:
   - name: YTAPI_API_KEY
     prompt: "YTAPI API key (starts with sk_)"
-    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys"
+    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys?utm_source=skill"
     required_for: "All YTAPI requests"
 metadata:
   openclaw:
@@ -140,7 +140,7 @@ successful task) instead of looping: `POST /v1/batch`, then poll
 Only successful responses use credits; errors are free. New accounts get 200
 free credits. Until a credit pack is bought, a key can make 1 request per
 second and 100 requests per day (UTC). Credit packs from $9:
-https://ytapi.dev/#pricing.
+https://ytapi.dev/?utm_source=skill#pricing.
 
 ## Errors
 
@@ -149,7 +149,7 @@ Errors look like `{"error": {"code": "...", "message": "...", "retryable": false
 | Status | Code | What to do |
 | --- | --- | --- |
 | 401 | `unauthorized` | Key missing or wrong: check `YTAPI_API_KEY`, or follow references/auth-setup.md. |
-| 402 | `insufficient_credits` | Out of credits. Tell the user; packs at https://ytapi.dev/#pricing. |
+| 402 | `insufficient_credits` | Out of credits. Tell the user; packs at https://ytapi.dev/?utm_source=skill#pricing. |
 | 404 | `language_not_found`, `captions_disabled` | No captions in the requested languages, or none at all. Try `languages=*`, or check `basic-info`. |
 | 404 | `video_not_found`, `video_private`, `video_unavailable`, `channel_not_found`, `playlist_not_found` | Wrong ID, or the item is private or removed. |
 | 429 | `rate_limited` | Wait for `Retry-After` seconds and retry. |

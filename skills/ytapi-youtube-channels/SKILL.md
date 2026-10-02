@@ -1,13 +1,13 @@
 ---
 name: ytapi-youtube-channels
 description: "Look up a YouTube channel by @handle or ID and list its latest uploads, all videos (newest, most popular or oldest first) or playlists, or read a playlist's videos, through the YTAPI API. Use for creator research, monitoring a channel for new videos, or collecting a channel's or playlist's videos to summarize. 中文：YouTube 频道、播放列表、最新视频。"
-version: 1.0.0
+version: 1.0.1
 homepage: https://ytapi.dev
 license: MIT-0
 required_environment_variables:
   - name: YTAPI_API_KEY
     prompt: "YTAPI API key (starts with sk_)"
-    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys"
+    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys?utm_source=skill"
     required_for: "All YTAPI requests"
 metadata:
   openclaw:
@@ -85,7 +85,7 @@ free credits. Until a credit pack is bought, a key can make 1 request per
 second and 100 per day (UTC); `429 daily_limit_exceeded` means that day's
 limit is used up (it resets at 00:00 UTC; any pack removes it).
 `402 insufficient_credits` means the balance is empty: packs from $9 at
-https://ytapi.dev/#pricing. `401` means the key is missing or wrong.
+https://ytapi.dev/?utm_source=skill#pricing. `401` means the key is missing or wrong.
 
 For video details, search, channels, playlists and batches in one skill,
 install `ytapi`. Full reference: https://docs.ytapi.dev

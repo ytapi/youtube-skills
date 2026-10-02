@@ -80,9 +80,9 @@ into the conversation.
 | --- | --- |
 | `invalid_code` | Ask the user to check the code. After 3 wrong codes, start again at step 2. |
 | `code_expired`, `too_many_attempts`, `invalid_signup_token` | Start again at step 2. |
-| `account_exists` (409) | The email already has an account. The user signs in at https://ytapi.dev/auth/login, creates a key at https://ytapi.dev/app/api-keys and pastes it here. Then go to **Store the key**. |
+| `account_exists` (409) | The email already has an account. The user signs in at https://ytapi.dev/auth/login?utm_source=skill, creates a key at https://ytapi.dev/app/api-keys?utm_source=skill and pastes it here. Then go to **Store the key**. |
 | `disposable_email`, `undeliverable_email`, `invalid_email` | Ask for the user's regular email address. |
-| `rate_limited`, `agent_signup_busy`, `email_failed` | Wait and try later, or let the user sign up at https://ytapi.dev/auth/login. |
+| `rate_limited`, `agent_signup_busy`, `email_failed` | Wait and try later, or let the user sign up at https://ytapi.dev/auth/login?utm_source=skill. |
 
 ## Store the key
 
@@ -93,5 +93,5 @@ into the conversation.
    see it, reload it or tell the user.
 3. Delete the temporary files: `rm -f /tmp/ytapi-signup.json /tmp/ytapi-verify.json`.
 
-The user can sign in at https://ytapi.dev/auth/login with the same email to
+The user can sign in at https://ytapi.dev/auth/login?utm_source=skill with the same email to
 see usage, manage keys and buy credits.
