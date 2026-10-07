@@ -8,8 +8,8 @@
   "plugins": [
     {
       "name": "ytapi",
-      "source": "./",
-      "description": "YouTube transcripts, subtitles, summaries, search, channels and playlists. YTAPI's MCP server with OAuth sign-in, plus skills."
+      "source": "./plugins/ytapi",
+      "description": "YouTube transcripts, search, channels and playlists in Claude: the YTAPI MCP server with OAuth sign-in, plus skills for summaries, channel digests and research."
     }
   ]
 }
