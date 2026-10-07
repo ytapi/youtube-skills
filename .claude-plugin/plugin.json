@@ -1,8 +1,8 @@
 {
   "name": "ytapi",
   "displayName": "YTAPI: YouTube transcripts",
-  "version": "1.0.1",
-  "description": "YouTube transcripts, subtitles, summaries, search, channels and playlists through the YTAPI REST API. Works on servers and cloud agents where yt-dlp gets blocked.",
+  "version": "1.1.0",
+  "description": "YouTube transcripts, subtitles, summaries, search, channels and playlists. Connects the YTAPI MCP server with OAuth sign-in, no API key needed, plus skills for summaries and channel research.",
   "author": {
     "name": "YTAPI",
     "email": "hello@ytapi.dev",
@@ -11,10 +11,25 @@
   "homepage": "https://ytapi.dev",
   "repository": "https://github.com/ytapi/youtube-skills",
   "license": "MIT-0",
-  "keywords": ["youtube", "transcript", "subtitles", "captions", "summarize", "search", "channels", "playlists"],
+  "keywords": [
+    "youtube",
+    "transcript",
+    "subtitles",
+    "captions",
+    "summarize",
+    "search",
+    "channels",
+    "playlists"
+  ],
   "icon": "./assets/icon.png",
   "documentationUrl": "https://docs.ytapi.dev",
   "supportUrl": "mailto:hello@ytapi.dev",
   "privacyPolicyUrl": "https://ytapi.dev/legal/privacy-policy",
-  "termsOfServiceUrl": "https://ytapi.dev/legal/terms"
+  "termsOfServiceUrl": "https://ytapi.dev/legal/terms",
+  "mcpServers": {
+    "ytapi": {
+      "type": "http",
+      "url": "https://api.ytapi.dev/mcp"
+    }
+  }
 }

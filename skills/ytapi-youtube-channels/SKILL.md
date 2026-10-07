@@ -1,7 +1,7 @@
 ---
 name: ytapi-youtube-channels
 description: "Look up a YouTube channel by @handle or ID and list its latest uploads, all videos (newest, most popular or oldest first) or playlists, or read a playlist's videos, through the YTAPI API. Use for creator research, monitoring a channel for new videos, or collecting a channel's or playlist's videos to summarize. 中文：YouTube 频道、播放列表、最新视频。"
-version: 1.0.1
+version: 1.1.0
 homepage: https://ytapi.dev
 license: MIT-0
 required_environment_variables:
@@ -29,6 +29,15 @@ metadata:
 # YouTube channels and playlists
 
 Channels and playlists from [YTAPI](https://ytapi.dev/?utm_source=skill): profiles, uploads and playlist contents.
+
+## YTAPI tools
+
+If this session already has the YTAPI tools (`get_transcript`,
+`get_video_info`, `search_youtube`, `get_channel_videos`,
+`get_playlist_videos`), from the YTAPI connector or plugin, use them: they
+need no API key and no `curl`. The REST API below is for when those tools
+are missing, or for what they don't cover, such as batches and full video
+details.
 
 ## Setup
 

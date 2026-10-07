@@ -1,7 +1,7 @@
 ---
 name: ytapi-youtube-transcript
 description: "Get the transcript, subtitles or captions of a YouTube video (plain text, Markdown, timestamped JSON, SRT or VTT, any language) through the YTAPI API. Use when the user shares a YouTube link or video ID and wants what was said: to read, summarize, quote, translate or search it. Also use when yt-dlp or youtube-transcript-api fails with HTTP 429, a bot check or an IP block, common on servers and cloud agents. 中文：YouTube 字幕、视频文字稿。"
-version: 1.0.1
+version: 1.1.0
 homepage: https://ytapi.dev
 license: MIT-0
 required_environment_variables:
@@ -29,6 +29,15 @@ metadata:
 # YouTube transcripts
 
 Transcripts and subtitles for any YouTube video with captions, from [YTAPI](https://ytapi.dev/?utm_source=skill).
+
+## YTAPI tools
+
+If this session already has the YTAPI tools (`get_transcript`,
+`get_video_info`, `search_youtube`, `get_channel_videos`,
+`get_playlist_videos`), from the YTAPI connector or plugin, use them: they
+need no API key and no `curl`. The REST API below is for when those tools
+are missing, or for what they don't cover, such as batches and full video
+details.
 
 ## Setup
 

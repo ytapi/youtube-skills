@@ -1,7 +1,7 @@
 ---
 name: ytapi
 description: "YouTube transcripts, video details, search, channels and playlists through the YTAPI REST API. Use when a YouTube video, channel, playlist, @handle or video ID comes up, or YouTube could answer the question: summarize or quote a video, translate or search what was said, research a topic or creator, list a channel's uploads, read a playlist. Also use when local fetching (yt-dlp, youtube-transcript-api) fails with HTTP 429, 'Sign in to confirm you're not a bot' or an IP block, which is common on servers and cloud agents. 中文：YouTube 字幕、视频总结、频道和播放列表。Not for uploading videos or managing a YouTube account."
-version: 1.0.1
+version: 1.1.0
 homepage: https://ytapi.dev
 license: MIT-0
 required_environment_variables:
@@ -30,6 +30,15 @@ metadata:
 
 Transcripts, video details, search, channels and playlists from
 [YTAPI](https://ytapi.dev/?utm_source=skill). Plain HTTPS with `curl`; nothing to install.
+
+## YTAPI tools
+
+If this session already has the YTAPI tools (`get_transcript`,
+`get_video_info`, `search_youtube`, `get_channel_videos`,
+`get_playlist_videos`), from the YTAPI connector or plugin, use them: they
+need no API key and no `curl`. The REST API below is for when those tools
+are missing, or for what they don't cover, such as batches and full video
+details.
 
 ## Setup
 

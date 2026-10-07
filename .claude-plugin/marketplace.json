@@ -9,7 +9,7 @@
     {
       "name": "ytapi",
       "source": "./",
-      "description": "YouTube transcripts, subtitles, summaries, search, channels and playlists through the YTAPI REST API."
+      "description": "YouTube transcripts, subtitles, summaries, search, channels and playlists. YTAPI's MCP server with OAuth sign-in, plus skills."
     }
   ]
 }

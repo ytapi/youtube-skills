@@ -10,12 +10,16 @@ yt-dlp often get HTTP 429, a bot check or an IP block.
 
 ## Install
 
-**Claude Code plugin:** run these in Claude Code to get all five skills:
+**Claude Code plugin:** run these in Claude Code to get all five skills and
+the YTAPI MCP server:
 
 ```text
 /plugin marketplace add ytapi/youtube-skills
 /plugin install ytapi@ytapi
 ```
+
+The first time Claude uses a YTAPI tool, run `/mcp` and sign in to your YTAPI
+account (or create one: 200 free credits, no card). No API key needed.
 
 **Claude Code, Codex, Cursor, Cline and others** ([skills.sh](https://skills.sh)):
 
