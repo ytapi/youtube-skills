@@ -10,8 +10,8 @@ yt-dlp often get HTTP 429, a bot check or an IP block.
 
 ## Install
 
-**Claude Code plugin:** run these in Claude Code to get all five skills and
-the YTAPI MCP server:
+**Claude plugin:** the YTAPI MCP server plus skills for video summaries,
+channel digests and topic research. In Claude Code:
 
 ```text
 /plugin marketplace add ytapi/youtube-skills
@@ -19,7 +19,8 @@ the YTAPI MCP server:
 ```
 
 The first time Claude uses a YTAPI tool, run `/mcp` and sign in to your YTAPI
-account (or create one: 200 free credits, no card). No API key needed.
+account (or create one: 200 free credits, no card). No API key needed. The
+plugin lives in [`plugins/ytapi`](plugins/ytapi).
 
 **Claude Code, Codex, Cursor, Cline and others** ([skills.sh](https://skills.sh)):
 
@@ -96,7 +97,9 @@ Each skill carries a copy of `shared/auth-setup.md` in its `references/`
 folder, because skills are installed one at a time. Edit the file in
 `shared/`, then run `./scripts/sync-references.sh`.
 
-When you change a skill, also bump `version` in `.claude-plugin/plugin.json`.
-Claude Code keeps plugin users on the version listed there.
+The Claude plugin in `plugins/ytapi` has its own skills, which use the MCP
+tools and never handle an API key. When you change them, bump `version` in
+`plugins/ytapi/.claude-plugin/plugin.json`: Claude Code keeps plugin users on
+the version listed there.
 
 Licensed [MIT-0](LICENSE).
