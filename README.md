@@ -10,6 +10,13 @@ yt-dlp often get HTTP 429, a bot check or an IP block.
 
 ## Install
 
+**Claude Code plugin:** run these in Claude Code to get all five skills:
+
+```text
+/plugin marketplace add ytapi/youtube-skills
+/plugin install ytapi@ytapi
+```
+
 **Claude Code, Codex, Cursor, Cline and others** ([skills.sh](https://skills.sh)):
 
 ```bash
@@ -84,5 +91,8 @@ day. Packs start at $9 for 2,000 credits and never expire:
 Each skill carries a copy of `shared/auth-setup.md` in its `references/`
 folder, because skills are installed one at a time. Edit the file in
 `shared/`, then run `./scripts/sync-references.sh`.
+
+When you change a skill, also bump `version` in `.claude-plugin/plugin.json`.
+Claude Code keeps plugin users on the version listed there.
 
 Licensed [MIT-0](LICENSE).

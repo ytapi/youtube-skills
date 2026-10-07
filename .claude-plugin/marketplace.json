@@ -1,0 +1,15 @@
+{
+  "name": "ytapi",
+  "owner": {
+    "name": "YTAPI",
+    "email": "hello@ytapi.dev"
+  },
+  "description": "YTAPI plugins for Claude Code: YouTube transcripts, summaries, search and channels.",
+  "plugins": [
+    {
+      "name": "ytapi",
+      "source": "./",
+      "description": "YouTube transcripts, subtitles, summaries, search, channels and playlists through the YTAPI REST API."
+    }
+  ]
+}
