@@ -24,7 +24,7 @@
   ],
   "icon": "./assets/icon.png",
   "documentationUrl": "https://docs.ytapi.dev/agent-setup/",
-  "supportUrl": "mailto:hello@ytapi.dev",
+  "supportUrl": "https://ytapi.dev/contact",
   "privacyPolicyUrl": "https://ytapi.dev/legal/privacy-policy",
   "termsOfServiceUrl": "https://ytapi.dev/legal/terms",
   "mcpServers": {
