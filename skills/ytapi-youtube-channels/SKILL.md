@@ -85,7 +85,7 @@ curl -s "https://api.ytapi.dev/v1/transcripts?video_id=VIDEO_ID&format=text" \
 
 For more than a handful of videos, use one batch (up to 100 tasks, 1 credit
 per successful task): `POST /v1/batch`, then poll `GET /v1/batch/{id}`.
-See https://docs.ytapi.dev/batch/run.
+See <https://docs.ytapi.dev/batch/run>.
 
 ## Credits and errors
 
@@ -94,7 +94,7 @@ free credits. Until a credit pack is bought, a key can make 1 request per
 second and 100 per day (UTC); `429 daily_limit_exceeded` means that day's
 limit is used up (it resets at 00:00 UTC; any pack removes it).
 `402 insufficient_credits` means the balance is empty: packs from $9 at
-https://ytapi.dev/?utm_source=skill#pricing. `401` means the key is missing or wrong.
+<https://ytapi.dev/?utm_source=skill#pricing>. `401` means the key is missing or wrong.
 
 For video details, search, channels, playlists and batches in one skill,
 install `ytapi`. Full reference: https://docs.ytapi.dev

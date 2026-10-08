@@ -142,14 +142,14 @@ The first page has the playlist's details and videos; pass `cursor` for more.
 
 For dozens of transcripts, submit one batch (up to 100 tasks, 1 credit per
 successful task) instead of looping: `POST /v1/batch`, then poll
-`GET /v1/batch/{id}`. See https://docs.ytapi.dev/batch/run.
+`GET /v1/batch/{id}`. See <https://docs.ytapi.dev/batch/run>.
 
 ## Credits and limits
 
 Only successful responses use credits; errors are free. New accounts get 200
 free credits. Until a credit pack is bought, a key can make 1 request per
 second and 100 requests per day (UTC). Credit packs from $9:
-https://ytapi.dev/?utm_source=skill#pricing.
+<https://ytapi.dev/?utm_source=skill#pricing>.
 
 ## Errors
 
@@ -158,7 +158,7 @@ Errors look like `{"error": {"code": "...", "message": "...", "retryable": false
 | Status | Code | What to do |
 | --- | --- | --- |
 | 401 | `unauthorized` | Key missing or wrong: check `YTAPI_API_KEY`, or follow references/auth-setup.md. |
-| 402 | `insufficient_credits` | Out of credits. Tell the user; packs at https://ytapi.dev/?utm_source=skill#pricing. |
+| 402 | `insufficient_credits` | Out of credits. Tell the user; packs at <https://ytapi.dev/?utm_source=skill#pricing>. |
 | 404 | `language_not_found`, `captions_disabled` | No captions in the requested languages, or none at all. Try `languages=*`, or check `basic-info`. |
 | 404 | `video_not_found`, `video_private`, `video_unavailable`, `channel_not_found`, `playlist_not_found` | Wrong ID, or the item is private or removed. |
 | 429 | `rate_limited` | Wait for `Retry-After` seconds and retry. |

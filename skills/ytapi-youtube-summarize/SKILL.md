@@ -92,7 +92,7 @@ free credits. Until a credit pack is bought, a key can make 1 request per
 second and 100 per day (UTC); `429 daily_limit_exceeded` means that day's
 limit is used up (it resets at 00:00 UTC; any pack removes it).
 `402 insufficient_credits` means the balance is empty: packs from $9 at
-https://ytapi.dev/?utm_source=skill#pricing. `401` means the key is missing or wrong.
+<https://ytapi.dev/?utm_source=skill#pricing>. `401` means the key is missing or wrong.
 
 For video details, search, channels, playlists and batches in one skill,
 install `ytapi`. Full reference: https://docs.ytapi.dev
