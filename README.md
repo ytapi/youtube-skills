@@ -22,6 +22,21 @@ The first time Claude uses a YTAPI tool, run `/mcp` and sign in to your YTAPI
 account (or create one: 200 free credits, no card). No API key needed. The
 plugin lives in [`plugins/ytapi`](plugins/ytapi).
 
+**Cursor:** add the YTAPI MCP server in Cursor Settings → MCP, or put this in
+`~/.cursor/mcp.json` (or `.cursor/mcp.json` in a project):
+
+```json
+{
+  "mcpServers": {
+    "ytapi": { "url": "https://api.ytapi.dev/mcp" }
+  }
+}
+```
+
+Cursor asks you to sign in to your YTAPI account the first time. This repo is
+also a Cursor plugin: [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json)
+and [`.mcp.json`](.mcp.json) at the root, plus the skills below.
+
 **Claude Code, Codex, Cursor, Cline and others** ([skills.sh](https://skills.sh)):
 
 ```bash
