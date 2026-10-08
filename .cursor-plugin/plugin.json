@@ -1,0 +1,25 @@
+{
+  "name": "ytapi",
+  "displayName": "YTAPI: YouTube transcripts",
+  "version": "1.0.0",
+  "description": "YouTube transcripts, video details, search, channels and playlists for Cursor. Connects the YTAPI MCP server with OAuth sign-in and adds skills that call the YTAPI HTTP API.",
+  "author": {
+    "name": "YTAPI",
+    "email": "hello@ytapi.dev",
+    "url": "https://ytapi.dev"
+  },
+  "homepage": "https://ytapi.dev",
+  "repository": "https://github.com/ytapi/youtube-skills",
+  "license": "MIT-0",
+  "keywords": [
+    "youtube",
+    "transcript",
+    "subtitles",
+    "captions",
+    "search",
+    "channels",
+    "playlists",
+    "mcp"
+  ],
+  "logo": "https://ytapi.dev/images/brand/ytapi-mark-512.png"
+}
