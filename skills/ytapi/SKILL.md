@@ -83,12 +83,18 @@ curl -s "https://api.ytapi.dev/v1/transcripts?video_id=VIDEO_ID_OR_URL&format=te
 # Free: title, duration, channel, and which caption languages exist
 curl -s "https://api.ytapi.dev/v1/videos/VIDEO_ID/basic-info" -H "Authorization: Bearer $YTAPI_API_KEY"
 
-# 1 credit: full record (description, views, likes, publish date, tags, ...)
+# 1 credit: full record (description, views, likes, comment count, publish
+# date, tags, chapters, live status, links, hashtags, music, related videos)
 curl -s "https://api.ytapi.dev/v1/videos/VIDEO_ID/video-info" -H "Authorization: Bearer $YTAPI_API_KEY"
 ```
 
 Check `basic-info` first when unsure whether a video has captions in a
 language: `available_languages` lists each track with `kind` `manual` or `asr`.
+
+`video-info` also returns YouTube's own `ai_summary` when YouTube shows one,
+and `related` (up to 20 suggested videos) for finding more on a topic. A
+scheduled stream or premiere has `is_upcoming: true` and `scheduled_start`
+(Unix time); it has no transcript until it airs.
 
 ## Search (1 credit per page)
 
