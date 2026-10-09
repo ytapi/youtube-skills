@@ -7,7 +7,7 @@ description: "Research a topic on YouTube: search for videos, read the most rele
 
 Use the YTAPI tools (`search_youtube`, `get_video_info`, `get_transcript`).
 If they are not available, ask the user to connect YTAPI: in Claude,
-Settings → Connectors; in Claude Code, run `/mcp` and sign in to `ytapi`.
+Customize → Connectors; in Claude Code, run `/mcp` and sign in to `ytapi`.
 
 ## Steps
 
