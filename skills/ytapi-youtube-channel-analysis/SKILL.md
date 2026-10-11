@@ -90,10 +90,11 @@ is about 15 credits per channel, a growth story about 15, a teardown about 6
 
 **Snapshot** (the default): what works for one to three channels now.
 1. The profile, then one page of uploads `newest` and one `popular`.
-2. Baseline: compare each video with the uploads around it, the median
-   views of about ten on either side on the newest page (fewer near the top,
-   so take the nearest twenty). Older videos have had years to gather views,
-   so one median over a page that spans years hides recent breakouts. Leave
+2. Baseline: compare each video with the uploads published within a few
+   months of it, at least five (for a channel that posts weekly or more, the
+   ten on either side), and take their median views. Older videos have had
+   years to gather views, so a median over uploads that span years hides
+   recent breakouts. Leave
    out videos younger than a week. Two times the baseline is above usual;
    three times or more is a breakout. Give the multiple. Hits on the popular
    page that are years old show what used to work.

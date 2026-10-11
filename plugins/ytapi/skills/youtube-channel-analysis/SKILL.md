@@ -38,10 +38,10 @@ a credit for each extra page of uploads to reach an older video).
    usually enough. The list has the channel's regular videos only, not its
    Shorts or live streams.
 3. **Baseline and breakouts.** Compare each video with the ones posted
-   around the same time: its baseline is the median views of about ten
-   uploads on either side of it on the newest page (fewer near the top, so
-   take the nearest twenty). Older videos have had
-   years to gather views, so one median over a page that spans years hides
+   around the same time: its baseline is the median views of the uploads
+   published within a few months of it, at least five (for a channel that
+   posts weekly or more, the ten on either side). Older videos have had
+   years to gather views, so a median over uploads that span years hides
    recent breakouts. Leave out videos younger than a week. Two times the
    baseline is above usual; three times or more is a breakout. Give the
    multiple. Hits on the popular page that are years old show what used to
