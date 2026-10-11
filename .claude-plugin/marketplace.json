@@ -9,7 +9,7 @@
     {
       "name": "ytapi",
       "source": "./plugins/ytapi",
-      "description": "YouTube transcripts, search, channels and playlists in Claude: the YTAPI MCP server with OAuth sign-in, plus skills for summaries, channel digests and research."
+      "description": "YouTube transcripts, search, channels and playlists in Claude: the YTAPI MCP server with OAuth sign-in, plus skills for summaries, channel digests, research and channel analysis."
     }
   ]
 }

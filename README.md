@@ -11,7 +11,7 @@ yt-dlp often get HTTP 429, a bot check or an IP block.
 ## Install
 
 **Claude plugin:** the YTAPI MCP server plus skills for video summaries,
-channel digests and topic research. In Claude Code:
+channel digests, topic research and channel analysis. In Claude Code:
 
 ```text
 /plugin marketplace add ytapi/youtube-skills
@@ -75,6 +75,7 @@ hermes skills install skills-sh/ytapi/youtube-skills/skills/ytapi
 | [`ytapi-youtube-search`](skills/ytapi-youtube-search/SKILL.md) | Search videos, channels, playlists and Shorts, then read the results |
 | [`ytapi-youtube-channels`](skills/ytapi-youtube-channels/SKILL.md) | Channel profiles, latest uploads, all videos, playlists |
 | [`ytapi-youtube-summarize`](skills/ytapi-youtube-summarize/SKILL.md) | Summaries and notes of a video or a channel's new uploads, with timestamped links |
+| [`ytapi-youtube-channel-analysis`](skills/ytapi-youtube-channel-analysis/SKILL.md) | Competitor research: breakouts, how a channel grew, why a video went viral, and a playbook skill to reuse |
 
 Install `ytapi` if you are unsure.
 
@@ -98,6 +99,7 @@ day. Packs start at $9 for 2,000 credits and never expire:
 - "Find this week's most-viewed videos about Rust async and tell me what they cover."
 - "What has @mkbhd uploaded lately? Give me a two-line summary of each."
 - "List every video in this playlist with its length."
+- "Why did @channel's latest video do so well? Turn what works into a playbook for my channel."
 
 ## Links
 
