@@ -26,7 +26,8 @@ Any mode can end with a **playbook** (see below). Offer it at the end; make
 it straight away when the user asked for a method to copy.
 
 Tell the user the estimate before you start. Typical runs: a snapshot about
-15 credits per channel, a growth story about 15, a teardown about 6.
+15 credits per channel, a growth story about 15, a teardown about 6 (plus
+a credit for each extra page of uploads to reach an older video).
 
 ## Snapshot
 
@@ -34,10 +35,12 @@ Tell the user the estimate before you start. Typical runs: a snapshot about
    and description.
 2. **Uploads.** `get_channel_videos` with `sort_by: "newest"` (what it does
    now) and `sort_by: "popular"` (its biggest hits). One page of each is
-   usually enough.
+   usually enough. The list has the channel's regular videos only, not its
+   Shorts or live streams.
 3. **Baseline and breakouts.** Compare each video with the ones posted
    around the same time: its baseline is the median views of about ten
-   uploads on either side of it on the newest page. Older videos have had
+   uploads on either side of it on the newest page (fewer near the top, so
+   take the nearest twenty). Older videos have had
    years to gather views, so one median over a page that spans years hides
    recent breakouts. Leave out videos younger than a week. Two times the
    baseline is above usual; three times or more is a breakout. Give the
@@ -51,8 +54,8 @@ Tell the user the estimate before you start. Typical runs: a snapshot about
    - topics and formats that beat the baseline, and those that fall below;
    - title patterns: questions, numbers, "I tried…", names, brackets,
      length;
-   - upload cadence and day of week, from publish times;
-   - typical length, and Shorts versus long videos;
+   - upload cadence and day of week, from the publish dates in the details;
+   - typical length;
    - keywords and chapters the breakouts share.
 6. **Openings and structure.** Read two or three breakouts with
    `get_transcript` (`format: "markdown"` for timestamps): what the first
@@ -71,8 +74,8 @@ Tell the user the estimate before you start. Typical runs: a snapshot about
    - when the cadence changed.
 4. `get_video_details` on the turning points for exact dates and counts,
    and `get_transcript` on the first breakout to see how it opened.
-5. Compare with the newest page: what the channel kept from its early
-   breakouts and what it changed.
+5. `get_channel_videos` with `sort_by: "newest"`, one page, and compare:
+   what the channel kept from its early breakouts and what it changed.
 
 Views on old videos keep growing for years, so they show what lasted, not
 how a video did in its first week. Say so. Subscriber history is not public;
@@ -82,8 +85,12 @@ don't invent a growth curve.
 
 1. **The numbers.** `get_video_details`: views, views per day, like and
    comment rates, publish time.
-2. **Against the channel.** `get_channel_videos` (`sort_by: "newest"`) for
-   the baseline, as in a snapshot, then the multiple.
+2. **Against the channel.** Find the video in `get_channel_videos`
+   (`sort_by: "newest"`, following `cursor` back to its date, or
+   `sort_by: "oldest"` for an early video) and take the baseline from the
+   uploads around it, as in a snapshot, then the multiple. Comparing an old
+   video's lifetime views with recent uploads inflates the multiple. Each
+   extra page costs a credit; stop once you reach its date.
 3. **Packaging.** The title, and what it promises compared with the
    channel's usual titles. Thumbnails are images; describe them only if
    you can see them.
@@ -96,8 +103,8 @@ don't invent a growth curve.
    - the opening: the hook and the promise, quoted briefly;
    - the structure: sections, pacing, where the payoff comes;
    - the moments at each peak: what is said or shown that viewers rewatch.
-     A peak right after a sponsor segment is often where viewers skip to,
-     not what they rewatch; say which it looks like.
+     A peak right after a sponsor segment or a long intro is often where
+     viewers skip to, not what they rewatch; say which it looks like.
 6. **The audience.** `get_comments` (top first, one page): what viewers
    quote, ask and argue about, and which moments they name.
 7. **Context.** The related videos in the details show whom YouTube places
@@ -132,8 +139,8 @@ plan videos for their own channel.
 1. Ask for the user's channel or niche if you don't know it, so the rules
    fit them, not the channel you studied.
 2. Write a `SKILL.md`:
-   - front matter with a `name` (lowercase, hyphens, such as
-     `cooking-shorts-playbook`) and a `description` that says when to use
+   - front matter between `---` lines, with a `name` (lowercase, hyphens,
+     such as `home-cooking-playbook`) and a `description` that says when to use
      it: planning, titling or scripting a video in this niche;
    - **Rules**, each one line, with the evidence behind it: the videos and
      numbers it came from;
@@ -147,7 +154,7 @@ plan videos for their own channel.
 3. Save it as `PLAYBOOK_NAME/SKILL.md` where the user's agent keeps skills
    (in Claude Code, `~/.claude/skills/`), or give it in a code block when
    you can't write files. Then tell the user how to use it, for example:
-   "Use my cooking-shorts playbook to plan next week's videos."
+   "Use my home-cooking playbook to plan next week's videos."
 
 A playbook describes a method. It must not copy the channel's scripts,
 titles or branding.

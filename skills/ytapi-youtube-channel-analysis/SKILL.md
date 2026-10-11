@@ -74,32 +74,36 @@ curl -s "$B/transcripts?video_id=VIDEO_ID&format=markdown" -H "$H"
 curl -s "$B/videos/VIDEO_ID/comments?sort=top" -H "$H"
 
 # Search, to see whether a topic was early or crowded
-curl -s "$B/search?q=QUERY&type=video" -H "$H"
+curl -s -G "$B/search" --data-urlencode "q=QUERY" -d type=video -H "$H"
 ```
 
 Paged responses carry `has_more` and `next_cursor`; pass `cursor=NEXT_CURSOR`
-for the next page. `404 heatmap_unavailable` means the video has no most
+for the next page. The uploads list has the channel's regular videos only,
+not its Shorts or live streams. `404 heatmap_unavailable` means the video has no most
 replayed graph, which is common on smaller videos; go on without it.
 
 ## Choose the mode
 
 Ask only what you can't guess. Tell the user the estimate first: a snapshot
-is about 15 credits per channel, a growth story about 15, a teardown about 6.
+is about 15 credits per channel, a growth story about 15, a teardown about 6
+(plus a credit for each extra page of uploads to reach an older video).
 
 **Snapshot** (the default): what works for one to three channels now.
 1. The profile, then one page of uploads `newest` and one `popular`.
 2. Baseline: compare each video with the uploads around it, the median
-   views of about ten on either side on the newest page. Older videos have
-   had years to gather views, so one median over a page that spans years
-   hides recent breakouts. Leave out videos younger than a week. Two times
-   the baseline is above usual; three times or more is a breakout. Give the
-   multiple.
-3. Video info on three to five breakouts and two typical videos. Use its
-   exact counts and work out views per day and like and comment rates; list
-   pages round views and give relative ages.
+   views of about ten on either side on the newest page (fewer near the top,
+   so take the nearest twenty). Older videos have had years to gather views,
+   so one median over a page that spans years hides recent breakouts. Leave
+   out videos younger than a week. Two times the baseline is above usual;
+   three times or more is a breakout. Give the multiple. Hits on the popular
+   page that are years old show what used to work.
+3. Video details (`video-info`; with the MCP tools, `get_video_details`,
+   not the free `get_video_info`) on three to five breakouts and two typical
+   videos. Use the exact counts and work out views per day and like and
+   comment rates; list pages round views and give relative ages.
 4. Note topics and formats above and below the baseline, title patterns,
-   cadence and day of week, length, Shorts versus long videos, and shared
-   keywords and chapters.
+   cadence and day of week (from the publish dates in the details), length,
+   and shared keywords and chapters.
 5. Read two or three breakout transcripts: the hook in the first 30 to 60
    seconds, the structure, where the payoff comes, calls to action.
 
@@ -107,23 +111,30 @@ is about 15 credits per channel, a growth story about 15, a teardown about 6.
 1. The profile, then two or three pages of uploads `oldest`.
 2. Find the first video that clearly beat the ones around it and what
    changed there, pivots in topic or format, and changes in cadence.
-3. Video info on those turning points, and the transcript of the first
+3. Video details on those turning points, and the transcript of the first
    breakout.
-4. Compare with the newest page: what the channel kept and what it changed.
+4. One page of uploads `newest`, and compare: what the channel kept from its
+   early breakouts and what it changed.
 
 Old videos keep gaining views for years, so they show what lasted, not the
 first week. Subscriber history is not public; don't invent a growth curve.
 
 **Breakout teardown**: why one video did far better than usual.
-1. Video info, and the channel's newest page for the baseline and multiple.
+1. Video details, then the baseline from the uploads around it: find the
+   video on the `newest` pages (follow the cursor back to its date) or the
+   `oldest` pages for an early video. Comparing an old video's lifetime
+   views with recent uploads inflates the multiple. Each page costs a
+   credit; stop once you reach its date.
 2. The title and its promise, compared with the channel's usual titles.
+   Thumbnails are images; describe them only if you can see them.
 3. The heatmap: most replayed moment and peaks. Ignore the first seconds,
-   which are high on almost every video.
+   which are high on almost every video. Many videos have none (404, free);
+   go on without it.
 4. The transcript: the opening, the structure, and what happens at each
-   peak. A peak right after a sponsor segment is often where viewers skip
-   to, not what they rewatch.
+   peak. A peak right after a sponsor segment or a long intro is often where
+   viewers skip to, not what they rewatch; say which it looks like.
 5. One page of top comments: what viewers quote, ask and argue about.
-6. The related videos in the video info, and a search on the topic, for
+6. The related videos in the video details, and a search on the topic, for
    context.
 
 ## Write the report
@@ -144,17 +155,21 @@ Quote short lines only and describe the rest in your own words.
 Offer this at the end, or do it straight away when the user asked for a
 method to copy. Ask for the user's own channel or niche if you don't know
 it. Then write a `SKILL.md` with:
-- front matter: a `name` (lowercase, hyphens) and a `description` saying to
-  use it when planning, titling or scripting a video in this niche;
+- front matter between `---` lines: a `name` (lowercase, hyphens) and a
+  `description` saying to use it when planning, titling or scripting a
+  video in this niche;
 - rules, each with the videos and numbers behind it;
 - title formulas and opening templates with blanks, not copied lines;
 - structure, cadence and length;
-- a checklist for a draft title and script, and what to avoid;
+- a checklist for a draft title and script;
+- what to avoid: what fell below the baseline;
 - the sources and the date, so the user knows when to refresh it.
 
 Save it as `PLAYBOOK_NAME/SKILL.md` in the agent's skills folder, or give it
-in a code block. It describes a method; it must not copy the channel's
-scripts, titles or branding.
+in a code block when you can't write files. Then tell the user how to use
+it, for example: "Use my home-cooking playbook to plan next week's videos."
+It describes a method; it must not copy the channel's scripts, titles or
+branding.
 
 ## Credits and errors
 
