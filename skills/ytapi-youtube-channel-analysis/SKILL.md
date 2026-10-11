@@ -134,8 +134,9 @@ first week. Subscriber history is not public; don't invent a growth curve.
    most replayed moment gives its exact span. Compare intensities as
    differences, not ratios: next to a point near zero any ratio looks huge.
    Many videos have none (404, free); go on without it.
-4. The transcript: the opening, the structure, and what happens at each
-   peak. A peak right after a sponsor segment or a long intro is often where
+4. The transcript in `srt` format, which has a time on every caption line,
+   so you can quote exactly what is said inside each peak: the opening, the
+   structure, and what happens at each peak. A peak right after a sponsor segment or a long intro is often where
    viewers skip to, not what they rewatch; say which it looks like.
 5. One page of top comments: what viewers quote, ask and argue about.
 6. The related videos in the video details, and a search on the topic, for

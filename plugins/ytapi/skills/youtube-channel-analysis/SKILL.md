@@ -101,8 +101,11 @@ don't invent a growth curve.
    most replayed moment gives its exact span. Compare intensities as
    differences, not ratios: next to a point near zero any ratio looks huge.
    Many videos have no graph; that error costs nothing, so go on without it.
-5. **What happens there.** `get_transcript` (`format: "markdown"`), then
-   read:
+5. **What happens there.** `get_transcript` with `format: "srt"`, which
+   has a time on every caption line, so you can quote exactly what is said
+   inside each peak (Markdown has a timestamp only every 30 to 80 seconds).
+   If the tool rejects `srt`, use `markdown` and say the timing is
+   approximate. Then read:
    - the opening: the hook and the promise, quoted briefly;
    - the structure: sections, pacing, where the payoff comes;
    - the moments at each peak: what is said or shown that viewers rewatch.
