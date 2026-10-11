@@ -96,8 +96,11 @@ don't invent a growth curve.
    you can see them.
 4. **Most replayed.** `get_video_heatmap`: the most replayed moment and the
    peaks. Ignore the first seconds: they are high on almost every video
-   because every view starts there. Many videos have no graph; that error
-   costs nothing, so go on without it.
+   because every view starts there. Each curve point averages about a
+   twentieth of the video, so a short spike looks wider than it is; the
+   most replayed moment gives its exact span. Compare intensities as
+   differences, not ratios: next to a point near zero any ratio looks huge.
+   Many videos have no graph; that error costs nothing, so go on without it.
 5. **What happens there.** `get_transcript` (`format: "markdown"`), then
    read:
    - the opening: the hook and the promise, quoted briefly;
@@ -108,7 +111,8 @@ don't invent a growth curve.
 6. **The audience.** `get_comments` (top first, one page): what viewers
    quote, ask and argue about, and which moments they name.
 7. **Context.** The related videos in the details show whom YouTube places
-   it next to. `search_youtube` on its topic shows whether it was early on a
+   it next to; describe the mix you see, and call it one kind only when most
+   of them are. `search_youtube` on its topic shows whether it was early on a
    trend or one of many.
 
 ## Write the report
@@ -143,7 +147,10 @@ plan videos for their own channel.
      such as `home-cooking-playbook`) and a `description` that says when to use
      it: planning, titling or scripting a video in this niche;
    - **Rules**, each one line, with the evidence behind it: the videos and
-     numbers it came from;
+     numbers it came from. A rule needs the pattern in at least two or three
+     videos;
+   - **To test**: patterns seen in only one video, or read from an ambiguous
+     peak, written as experiments, not rules;
    - **Title formulas** and **opening templates**, with blanks to fill in,
      not copied titles or lines;
    - **Structure**: the sections, their order and rough timing;
@@ -163,5 +170,6 @@ titles or branding.
 
 1 credit each for `get_channel`, `get_video_details`, `get_video_heatmap`,
 a page of uploads, comments or search results, and the first page of a
-transcript. Errors cost nothing, such as a video without captions or
+transcript. Later pages of the same transcript (with `offset`) are free for
+30 minutes, so don't count them. Errors cost nothing, such as a video without captions or
 without a most replayed graph. Ask before reading more than ten transcripts.

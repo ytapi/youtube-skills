@@ -129,14 +129,18 @@ first week. Subscriber history is not public; don't invent a growth curve.
 2. The title and its promise, compared with the channel's usual titles.
    Thumbnails are images; describe them only if you can see them.
 3. The heatmap: most replayed moment and peaks. Ignore the first seconds,
-   which are high on almost every video. Many videos have none (404, free);
-   go on without it.
+   which are high on almost every video. Each curve point averages about a
+   twentieth of the video, so a short spike looks wider than it is; the
+   most replayed moment gives its exact span. Compare intensities as
+   differences, not ratios: next to a point near zero any ratio looks huge.
+   Many videos have none (404, free); go on without it.
 4. The transcript: the opening, the structure, and what happens at each
    peak. A peak right after a sponsor segment or a long intro is often where
    viewers skip to, not what they rewatch; say which it looks like.
 5. One page of top comments: what viewers quote, ask and argue about.
 6. The related videos in the video details, and a search on the topic, for
-   context.
+   context. Describe the mix of related videos you see; call it one kind
+   only when most of them are.
 
 ## Write the report
 
@@ -159,7 +163,10 @@ it. Then write a `SKILL.md` with:
 - front matter between `---` lines: a `name` (lowercase, hyphens) and a
   `description` saying to use it when planning, titling or scripting a
   video in this niche;
-- rules, each with the videos and numbers behind it;
+- rules, each with the videos and numbers behind it; a rule needs the
+  pattern in at least two or three videos;
+- to test: patterns seen in only one video, or read from an ambiguous peak,
+  written as experiments, not rules;
 - title formulas and opening templates with blanks, not copied lines;
 - structure, cadence and length;
 - a checklist for a draft title and script;
