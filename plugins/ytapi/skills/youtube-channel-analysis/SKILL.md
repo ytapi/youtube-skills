@@ -35,10 +35,14 @@ Tell the user the estimate before you start. Typical runs: a snapshot about
 2. **Uploads.** `get_channel_videos` with `sort_by: "newest"` (what it does
    now) and `sort_by: "popular"` (its biggest hits). One page of each is
    usually enough.
-3. **Baseline and breakouts.** The baseline is the median views of the
-   newest page, leaving out videos younger than a week. A video with three
-   or more times the baseline is a breakout; give its multiple. Hits on the
-   popular page that are years old show what used to work.
+3. **Baseline and breakouts.** Compare each video with the ones posted
+   around the same time: its baseline is the median views of about ten
+   uploads on either side of it on the newest page. Older videos have had
+   years to gather views, so one median over a page that spans years hides
+   recent breakouts. Leave out videos younger than a week. Two times the
+   baseline is above usual; three times or more is a breakout. Give the
+   multiple. Hits on the popular page that are years old show what used to
+   work.
 4. **Details.** `get_video_details` on three to five breakouts and two
    typical videos. Use its exact counts, publish time, views per day and
    like and comment rates. List pages round views and give relative ages,
@@ -92,6 +96,8 @@ don't invent a growth curve.
    - the opening: the hook and the promise, quoted briefly;
    - the structure: sections, pacing, where the payoff comes;
    - the moments at each peak: what is said or shown that viewers rewatch.
+     A peak right after a sponsor segment is often where viewers skip to,
+     not what they rewatch; say which it looks like.
 6. **The audience.** `get_comments` (top first, one page): what viewers
    quote, ask and argue about, and which moments they name.
 7. **Context.** The related videos in the details show whom YouTube places

@@ -88,9 +88,12 @@ is about 15 credits per channel, a growth story about 15, a teardown about 6.
 
 **Snapshot** (the default): what works for one to three channels now.
 1. The profile, then one page of uploads `newest` and one `popular`.
-2. Baseline: the median views of the newest page, leaving out videos younger
-   than a week. A video with three or more times the baseline is a
-   breakout; give its multiple.
+2. Baseline: compare each video with the uploads around it, the median
+   views of about ten on either side on the newest page. Older videos have
+   had years to gather views, so one median over a page that spans years
+   hides recent breakouts. Leave out videos younger than a week. Two times
+   the baseline is above usual; three times or more is a breakout. Give the
+   multiple.
 3. Video info on three to five breakouts and two typical videos. Use its
    exact counts and work out views per day and like and comment rates; list
    pages round views and give relative ages.
@@ -117,7 +120,8 @@ first week. Subscriber history is not public; don't invent a growth curve.
 3. The heatmap: most replayed moment and peaks. Ignore the first seconds,
    which are high on almost every video.
 4. The transcript: the opening, the structure, and what happens at each
-   peak.
+   peak. A peak right after a sponsor segment is often where viewers skip
+   to, not what they rewatch.
 5. One page of top comments: what viewers quote, ask and argue about.
 6. The related videos in the video info, and a search on the topic, for
    context.
