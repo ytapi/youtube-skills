@@ -67,8 +67,10 @@ curl -s "$B/videos/VIDEO_ID/video-info" -H "$H"
 # Most replayed graph: most_replayed, peaks and a 20-part curve
 curl -s "$B/videos/VIDEO_ID/heatmap" -H "$H"
 
-# Transcript with [m:ss] timestamps
+# Transcript: markdown has a [m:ss] timestamp every few lines; srt has a
+# start and end time on every caption line, for lining up replay peaks
 curl -s "$B/transcripts?video_id=VIDEO_ID&format=markdown" -H "$H"
+curl -s "$B/transcripts?video_id=VIDEO_ID&format=srt" -H "$H"
 
 # Top comments, about 20 a page
 curl -s "$B/videos/VIDEO_ID/comments?sort=top" -H "$H"

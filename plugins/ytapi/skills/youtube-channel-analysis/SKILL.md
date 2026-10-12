@@ -8,7 +8,7 @@ description: "Study a YouTube channel the way a creator studies a competitor: wh
 Use the YTAPI tools: `get_channel`, `get_channel_videos`,
 `get_video_details`, `get_video_heatmap`, `get_transcript`,
 `get_comments` and `search_youtube`. If they are not available, ask the user
-to connect YTAPI: in Claude, Settings → Connectors; in Claude Code, run
+to connect YTAPI: in Claude, Customize → Connectors; in Claude Code, run
 `/mcp` and sign in to `ytapi`.
 
 ## Choose the mode
