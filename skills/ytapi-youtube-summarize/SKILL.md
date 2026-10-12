@@ -1,7 +1,7 @@
 ---
 name: ytapi-youtube-summarize
 description: "Summarize a YouTube video, or the latest videos of a channel, into notes with key points, quotes and timestamped links, using transcripts from the YTAPI API. Use when the user shares a YouTube link and asks what it says, wants a TL;DR, notes, chapters, key takeaways or a digest of a creator's new uploads. Works on servers and cloud agents where direct YouTube fetching is blocked. 中文：总结 YouTube 视频、生成笔记。"
-version: 1.1.0
+version: 1.2.0
 homepage: https://ytapi.dev
 license: MIT-0
 required_environment_variables:
@@ -33,11 +33,11 @@ Turn a YouTube video, or a channel's new uploads, into notes, using transcripts 
 ## YTAPI tools
 
 If this session already has the YTAPI tools (`get_transcript`,
-`get_video_info`, `search_youtube`, `get_channel_videos`,
+`get_video_info`, `get_video_details`, `get_video_heatmap`, `get_comments`,
+`search_youtube`, `get_channel`, `get_channel_videos`,
 `get_playlist_videos`), from the YTAPI connector or plugin, use them: they
 need no API key and no `curl`. The REST API below is for when those tools
-are missing, or for what they don't cover, such as batches and full video
-details.
+are missing, or for what they don't cover, such as batches.
 
 ## Setup
 

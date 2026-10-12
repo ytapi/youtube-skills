@@ -1,7 +1,7 @@
 ---
 name: ytapi
-description: "YouTube transcripts, video details, search, channels and playlists through the YTAPI REST API. Use when a YouTube video, channel, playlist, @handle or video ID comes up, or YouTube could answer the question: summarize or quote a video, translate or search what was said, research a topic or creator, list a channel's uploads, read a playlist. Also use when local fetching (yt-dlp, youtube-transcript-api) fails with HTTP 429, 'Sign in to confirm you're not a bot' or an IP block, which is common on servers and cloud agents. 中文：YouTube 字幕、视频总结、频道和播放列表。Not for uploading videos or managing a YouTube account."
-version: 1.1.0
+description: "YouTube transcripts, video details, comments, most replayed moments, search, channels and playlists through the YTAPI REST API. Use when a YouTube video, channel, playlist, @handle or video ID comes up, or YouTube could answer the question: summarize or quote a video, translate or search what was said, read what viewers say in the comments, find the most rewatched part, research a topic or creator, list a channel's uploads, read a playlist. Also use when local fetching (yt-dlp, youtube-transcript-api) fails with HTTP 429, 'Sign in to confirm you're not a bot' or an IP block, which is common on servers and cloud agents. 中文：YouTube 字幕、视频总结、频道和播放列表。Not for uploading videos or managing a YouTube account."
+version: 1.2.0
 homepage: https://ytapi.dev
 license: MIT-0
 required_environment_variables:
@@ -22,23 +22,23 @@ metadata:
         required: false
         description: "YTAPI API key (sk_...). If it is not set, the skill can create a free account and key with the user's email."
   hermes:
-    tags: [youtube, transcripts, subtitles, captions, video, search, channels, playlists]
+    tags: [youtube, transcripts, subtitles, captions, video, comments, search, channels, playlists]
     category: media
 ---
 
 # YTAPI: YouTube data for agents
 
-Transcripts, video details, search, channels and playlists from
+Transcripts, video details, comments, search, channels and playlists from
 [YTAPI](https://ytapi.dev/?utm_source=skill). Plain HTTPS with `curl`; nothing to install.
 
 ## YTAPI tools
 
 If this session already has the YTAPI tools (`get_transcript`,
-`get_video_info`, `search_youtube`, `get_channel_videos`,
+`get_video_info`, `get_video_details`, `get_video_heatmap`, `get_comments`,
+`search_youtube`, `get_channel`, `get_channel_videos`,
 `get_playlist_videos`), from the YTAPI connector or plugin, use them: they
 need no API key and no `curl`. The REST API below is for when those tools
-are missing, or for what they don't cover, such as batches and full video
-details.
+are missing, or for what they don't cover, such as batches.
 
 ## Setup
 
@@ -95,6 +95,35 @@ language: `available_languages` lists each track with `kind` `manual` or `asr`.
 and `related` (up to 20 suggested videos) for finding more on a topic. A
 scheduled stream or premiere has `is_upcoming: true` and `scheduled_start`
 (Unix time); it has no transcript until it airs.
+
+## Comments (1 credit per page)
+
+```bash
+# Top comments (or sort=newest), about 20 per page
+curl -s "https://api.ytapi.dev/v1/videos/VIDEO_ID/comments?sort=top" -H "Authorization: Bearer $YTAPI_API_KEY"
+
+# Replies to one comment: pass its replies_cursor, then each page's next_cursor
+curl -s -G "https://api.ytapi.dev/v1/videos/VIDEO_ID/comments/replies" --data-urlencode "cursor=REPLIES_CURSOR" -H "Authorization: Bearer $YTAPI_API_KEY"
+```
+
+Each comment has `text`, `author.name`, `like_count`, `reply_count`,
+`published_text` ("3 years ago") and `is_pinned` / `is_hearted`. Like counts
+and the total `comment_count` are YouTube's rounded figures. Pass
+`cursor=NEXT_CURSOR` for the next page and stop when you have enough. A
+video with comments turned off returns `404 comments_disabled`, free. Quote
+comments briefly; they are other people's words.
+
+## Most replayed moments (1 credit)
+
+```bash
+curl -s "https://api.ytapi.dev/v1/videos/VIDEO_ID/heatmap" -H "Authorization: Bearer $YTAPI_API_KEY"
+```
+
+YouTube's "most replayed" graph: `most_replayed`, up to five `peaks` and a
+20-part `curve`, each with `start_seconds` and an `intensity` from 0 to 1
+relative to the video's own peak. Ignore the first seconds, which are high
+on almost every video. Many videos have no graph: `404 heatmap_unavailable`,
+free. Link a moment as `https://www.youtube.com/watch?v=VIDEO_ID&t=SECONDS`.
 
 ## Search (1 credit per page)
 
@@ -166,6 +195,7 @@ Errors look like `{"error": {"code": "...", "message": "...", "retryable": false
 | 401 | `unauthorized` | Key missing or wrong: check `YTAPI_API_KEY`, or follow references/auth-setup.md. |
 | 402 | `insufficient_credits` | Out of credits. Tell the user; packs at <https://ytapi.dev/?utm_source=skill#pricing>. |
 | 404 | `language_not_found`, `captions_disabled` | No captions in the requested languages, or none at all. Try `languages=*`, or check `basic-info`. |
+| 404 | `comments_disabled`, `heatmap_unavailable` | The video has comments turned off, or no most replayed graph. Free; go on without it. |
 | 404 | `video_not_found`, `video_private`, `video_unavailable`, `channel_not_found`, `playlist_not_found` | Wrong ID, or the item is private or removed. |
 | 429 | `rate_limited` | Wait for `Retry-After` seconds and retry. |
 | 429 | `daily_limit_exceeded` | Free keys allow 100 requests a day; it resets at 00:00 UTC. Any credit pack removes the limit. |
