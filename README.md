@@ -70,7 +70,7 @@ hermes skills install skills-sh/ytapi/youtube-skills/skills/ytapi
 
 | Skill | What it does |
 | --- | --- |
-| [`ytapi`](skills/ytapi/SKILL.md) | Everything below in one skill: transcripts, video details, search, channels, playlists, batches |
+| [`ytapi`](skills/ytapi/SKILL.md) | Everything below in one skill: transcripts, video details, comments, most replayed moments, search, channels, playlists, batches |
 | [`ytapi-youtube-transcript`](skills/ytapi-youtube-transcript/SKILL.md) | Transcripts and subtitles: text, Markdown, timestamped JSON, SRT, VTT, any language |
 | [`ytapi-youtube-search`](skills/ytapi-youtube-search/SKILL.md) | Search videos, channels, playlists and Shorts, then read the results |
 | [`ytapi-youtube-channels`](skills/ytapi-youtube-channels/SKILL.md) | Channel profiles, latest uploads, all videos, playlists |
