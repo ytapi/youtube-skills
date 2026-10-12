@@ -1,7 +1,7 @@
 {
   "name": "ytapi",
   "displayName": "YTAPI: YouTube transcripts",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "YouTube transcripts, video details, search, channels and playlists in Claude. Connects the YTAPI MCP server with OAuth sign-in (no API key) and adds skills for video summaries, channel digests and topic research.",
   "author": {
     "name": "YTAPI",

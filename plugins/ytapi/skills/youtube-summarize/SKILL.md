@@ -6,7 +6,7 @@ description: "Summarize a YouTube video into key points, quotes and timestamped 
 # Summarize a YouTube video
 
 Use the YTAPI tools (`get_transcript`, `get_video_info`). If they are not
-available, ask the user to connect YTAPI: in Claude, Settings → Connectors;
+available, ask the user to connect YTAPI: in Claude, Customize → Connectors;
 in Claude Code, run `/mcp` and sign in to `ytapi`.
 
 ## Steps

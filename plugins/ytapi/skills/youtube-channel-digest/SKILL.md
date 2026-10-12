@@ -7,7 +7,7 @@ description: "Catch up on a YouTube channel: list its latest or most popular upl
 
 Use the YTAPI tools (`get_channel_videos`, `get_playlist_videos`,
 `get_transcript`). If they are not available, ask the user to connect YTAPI:
-in Claude, Settings → Connectors; in Claude Code, run `/mcp` and sign in to
+in Claude, Customize → Connectors; in Claude Code, run `/mcp` and sign in to
 `ytapi`.
 
 ## Steps
