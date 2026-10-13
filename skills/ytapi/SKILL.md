@@ -7,7 +7,7 @@ license: MIT-0
 required_environment_variables:
   - name: YTAPI_API_KEY
     prompt: "YTAPI API key (starts with sk_)"
-    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys?utm_source=skill"
+    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys?utm_source=skill&utm_medium=skill-file"
     required_for: "All YTAPI requests"
 metadata:
   openclaw:
@@ -29,7 +29,7 @@ metadata:
 # YTAPI: YouTube data for agents
 
 Transcripts, video details, comments, search, channels and playlists from
-[YTAPI](https://ytapi.dev/?utm_source=skill). Plain HTTPS with `curl`; nothing to install.
+[YTAPI](https://ytapi.dev/?utm_source=skill&utm_medium=skill-file). Plain HTTPS with `curl`; nothing to install.
 
 ## YTAPI tools
 
@@ -184,7 +184,7 @@ successful task) instead of looping: `POST /v1/batch`, then poll
 Only successful responses use credits; errors are free. New accounts get 200
 free credits. Until a credit pack is bought, a key can make 1 request per
 second and 100 requests per day (UTC). Credit packs from $9:
-<https://ytapi.dev/?utm_source=skill#pricing>.
+<https://ytapi.dev/?utm_source=skill&utm_medium=skill-file#pricing>.
 
 ## Errors
 
@@ -193,7 +193,7 @@ Errors look like `{"error": {"code": "...", "message": "...", "retryable": false
 | Status | Code | What to do |
 | --- | --- | --- |
 | 401 | `unauthorized` | Key missing or wrong: check `YTAPI_API_KEY`, or follow references/auth-setup.md. |
-| 402 | `insufficient_credits` | Out of credits. Tell the user; packs at <https://ytapi.dev/?utm_source=skill#pricing>. |
+| 402 | `insufficient_credits` | Out of credits. Tell the user; packs at <https://ytapi.dev/?utm_source=skill&utm_medium=skill-file#pricing>. |
 | 404 | `language_not_found`, `captions_disabled` | No captions in the requested languages, or none at all. Try `languages=*`, or check `basic-info`. |
 | 404 | `comments_disabled`, `heatmap_unavailable` | The video has comments turned off, or no most replayed graph. Free; go on without it. |
 | 404 | `video_not_found`, `video_private`, `video_unavailable`, `channel_not_found`, `playlist_not_found` | Wrong ID, or the item is private or removed. |

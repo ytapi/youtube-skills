@@ -7,7 +7,7 @@ license: MIT-0
 required_environment_variables:
   - name: YTAPI_API_KEY
     prompt: "YTAPI API key (starts with sk_)"
-    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys?utm_source=skill"
+    help: "Leave empty and the agent can create a free account for you (200 credits, no card), or get a key at https://ytapi.dev/app/api-keys?utm_source=skill&utm_medium=skill-file"
     required_for: "All YTAPI requests"
 metadata:
   openclaw:
@@ -28,7 +28,7 @@ metadata:
 
 # Summarize YouTube videos
 
-Turn a YouTube video, or a channel's new uploads, into notes, using transcripts from [YTAPI](https://ytapi.dev/?utm_source=skill).
+Turn a YouTube video, or a channel's new uploads, into notes, using transcripts from [YTAPI](https://ytapi.dev/?utm_source=skill&utm_medium=skill-file).
 
 ## YTAPI tools
 
@@ -92,7 +92,7 @@ free credits. Until a credit pack is bought, a key can make 1 request per
 second and 100 per day (UTC); `429 daily_limit_exceeded` means that day's
 limit is used up (it resets at 00:00 UTC; any pack removes it).
 `402 insufficient_credits` means the balance is empty: packs from $9 at
-<https://ytapi.dev/?utm_source=skill#pricing>. `401` means the key is missing or wrong.
+<https://ytapi.dev/?utm_source=skill&utm_medium=skill-file#pricing>. `401` means the key is missing or wrong.
 
 For video details, search, channels, playlists and batches in one skill,
 install `ytapi`. Full reference: https://docs.ytapi.dev
